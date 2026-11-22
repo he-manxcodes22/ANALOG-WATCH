@@ -1,25 +1,23 @@
-const clock = document.querySelector(".clock");
-for (let i = 0; i < 60; i++) {
-    const mark = document.createElement("span");
-    mark.className = i % 5 === 0 ? "mark major":
-    "mark";
-    mark.style.setProperty("--angle", i * 6 + "deg");
-        clock.appendChild(mark);
+let hr = document.getElementById('hour');
+let min = document.getElementById('min');
+let sec = document.getElementById('sec');
+
+function displayTime(){
+    let date = new Date();
+
+    // Getting hour, mins, secs from date
+    let hh = date.getHours();
+    let mm = date.getMinutes();
+    let ss = date.getSeconds();
+
+    let hRotation = 30*hh + mm/2;
+    let mRotation = 6*mm;
+    let sRotation = 6*ss;
+
+    hr.style.transform = `rotate(${hRotation}deg)`;
+    min.style.transform = `rotate(${mRotation}deg)`;
+    sec.style.transform = `rotate(${sRotation}deg)`;
+
 }
 
-const hour = document.querySelector(".hour");
-const minute = document.querySelector(".minute");
-const second = document.querySelector(".second");
-function updateClock() {
-    const now = new Date ();
-    const s = now.getSeconds() + now.getMilliseconds() /
-    1000;
-    const m = now.getMinutes() + s/60;
-    const h = now.getHours() % 12 + m/ 60;
-    hour.style.transform = '(rotate(${h *30}deg)';
-        minute.style.transform = '(rotate(${m *6}deg)';
-    second.style.transform = '(rotate(${s *6}deg)';
-}
-updateClock();
-setInterval(updateClock,50);
-
+setInterval(displayTime, 1000);
