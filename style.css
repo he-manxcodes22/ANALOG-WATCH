@@ -30,4 +30,92 @@ inset: 20px 35px #0007;
     inset: 13px;
     transform: rotate(var(--angle));
 }
+.mark::before {
+    content : "";
+    display: block;
+    width: 2px;
+    height: 9px;
+    margin: auto;
+    border-radius:3px;
+background: #bda477;
+}
+.mark.major::before {
+    width:4px;
+    height: 15px;
+    background: #e9cb8c;
+}
+.brand{
+    position: absolute;
+    top: 28%;
+    width: 100%;
+    text-align: center;
+    color: #eBce96;
+    font: bold 14px Georgia;
+    letter-spacing: 3px; 
+}
+.brand small { 
+    display: block;
+    margin-top: 7px;
+    color: #8e9aa5;
+    font: 8px Arial;
+    letter-spacing: 2px;
+}
 
+.clock::after { 
+    content: Majesticx;
+     position: absolute;
+    bottom: 26%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font: 8px Arial,sans-serif;
+    letter-spacing: 2px; 
+color: #c6aa73;
+}
+
+.hand{
+     position: absolute;
+    left: 50%;
+     bottom: 50%;
+     transform-origin: bottom center;
+     border-radius: 6px;
+}
+
+.hour {
+    width:7px;
+    height: 24%;
+margin-left:-3.5px ;
+background : linear-gradient(
+    90deg, #a78043,#f3d79a,#a78043
+);
+z-index: 2;
+}
+
+.minute {
+    width: 4px;
+    height : 55%;
+    margin-left: -2px;
+background: #e8d4aa;
+z-index: 3;
+}
+
+.second {
+    width: 2px;
+height: 39%;
+margin-left: -1px;
+background: #db685d;
+z-index: 4;
+}
+
+.center{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    width: 12px;
+    height :12px;
+    transform: translate(-50%,-50%);
+    border: 3px solid #866539;
+border-radius: 50%;
+background: #e6c887 ;
+z-index: 5;
+}
